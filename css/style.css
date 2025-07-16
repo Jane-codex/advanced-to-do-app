@@ -397,7 +397,7 @@
 
     .input-area {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
   }
 
@@ -405,10 +405,27 @@
       width: 100%;  
     border-radius: 15px; 
   }
-
+    
+    .input-area input[type="datetime-local"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border: 1px solid #555;
+       border-radius: 8px;
+       background-color: #222;
+       color: #fff;
+    }
+    
    .input-area button {
        width: 90%; 
        border-radius: 15px;
+       margin: 0 auto;
+   }
+
+   .add-btn {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
    }
 
   .view-toggle {
@@ -418,7 +435,28 @@
 
   .view-btn {
     width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
   }
+
+   .kanban-column {
+    padding: 10px;
+     width: 100%; 
+    margin-bottom: 20px;
+   }
+
+      .kanban-column select {
+        width: 100%;
+        max-width: 140px;
+      }
+
+
+     .calendar-card {
+      margin-bottom: 15px;
+      padding: 12px;
+      font-size: 0.95rem;
+     }
+
 
 }
  
