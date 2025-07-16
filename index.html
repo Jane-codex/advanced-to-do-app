@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Advanced TO-DO APP</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+   <body>
+        <div class="container">
+          <div class="todo-app">
+
+              <h1>To-Do App</h1>
+              <p id="current-project-label">Project: Personal</p>
+
+           <form class="input-area" id="task-form">
+        <input type="text" id="task-input" placeholder="Enter a new task..." />
+                  <input type="datetime-local" id="task-date" />
+           <button type="submit" id="add-task-btn"><i class="fa-solid fa-plus"></i></button>
+           </form>
+
+            <div class="project-controls">
+              
+        <select id="project-selector">
+          <option value="Personal">Personal</option>
+          <option value="Work">Work</option>
+        </select>
+    
+       
+                   <div class="view-toggle">
+  <button class="view-btn active"><i class="fa-solid fa-list"></i> List</button>
+  <button class="view-btn"><i class="fa-solid fa-columns"></i> Kanban</button>
+  <button class="view-btn"><i class="fa-solid fa-calendar-days"></i> Calendar</button>
+</div>
+     
+         <!--  <div class="view-toggle">
+             <button class="view-btn active">List</button>
+            <button class="view-btn">Kanban</button>
+           <button class="view-btn">Calendar</button>
+           </div>
+          </div> -->
+ 
+
+          <div class="todos-container" id="list-view">
+          <ul id="task-list">
+          </ul>
+         <img class="empty-images" src="images/empty.svg" alt="empty">
+          </div>
+
+          <div id="kanban-view" style="display: none;" class="kanban-board">
+                       <div class="kanban-column" data-status="todo">
+                               <h3>To Do</h3>
+                        <ul class="kanban-tasks" id="todo-column"></ul>
+                                         </div>
+                        <div class="kanban-column" data-status="in-progress">
+                              <h3>In Progress</h3>
+                         <ul class="kanban-tasks" id="in-progress-column"></ul>
+                                   </div>
+                         <div class="kanban-column" data-status="done">
+                                       <h3>Done</h3>
+                             <ul class="kanban-tasks" id="done-column"></ul>
+                                          </div>
+                                           </div>
+
+                           
+               <div id="calendar-view" style="display: none;"></div>
+                          
+           
+             
+          </div>
+        </div>
+        <div id="productivity-summary"></div>
+            </div>
+            </div>
+          
+
+         <script src="js/main.js"></script>
+
+         <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then((reg) => console.log("✅ Service Worker registered!", reg))
+        .catch((err) => console.error("❌ Registration failed:", err));
+    });
+  }
+</script>
+
+</body>
+</html>
+
